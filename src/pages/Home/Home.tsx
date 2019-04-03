@@ -4,7 +4,7 @@ import "./home.scss";
 const Home: FunctionComponent = () => {
   return (
     <>
-      <div>HOME PAGE</div>
+      <div className="Home">HOME PAGE</div>
     </>
   );
 };

@@ -1,0 +1,13 @@
+.admin {
+  width: 400px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  input {
+    padding: 6px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

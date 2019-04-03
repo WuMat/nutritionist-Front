@@ -1,5 +1,6 @@
 .nav {
   width: 100%;
+  min-width: 360px;
   display: flex;
   justify-content: center;
   box-shadow: 0px 2px 5px rgba(11, 11, 11, 0.1);
@@ -13,13 +14,23 @@
 .nav__element {
   display: flex;
   padding: 0 20px;
+
   a {
     text-decoration: none;
     display: flex;
     align-items: center;
+    display: block;
+    color: grey;
+    transition: all 0.4s;
+    &:hover {
+      color: pink;
+    }
   }
   li {
     list-style-type: none;
     margin: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 }
