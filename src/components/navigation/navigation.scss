@@ -1,0 +1,25 @@
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0px 2px 5px rgba(11, 11, 11, 0.1);
+  height: 82px;
+  color: rgb(142, 142, 142);
+  font-size: 18px;
+  ul {
+  }
+}
+
+.nav__element {
+  display: flex;
+  padding: 0 20px;
+  a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  li {
+    list-style-type: none;
+    margin: 0 20px;
+  }
+}
