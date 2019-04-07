@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useState } from "react";
 import "./admin.scss";
 
 const Admin: FunctionComponent = () => {
@@ -24,6 +24,19 @@ const Admin: FunctionComponent = () => {
           name="description"
           placeholder="Opis"
           onChange={handleChange}
+        />
+        <textarea
+          name="ingredients"
+          placeholder="Składniki"
+          onChange={handleChange}
+        />
+        <input
+          name="imagePreviewUrl1"
+          // onChange={handleSelectFile}
+          type="file"
+          // style={{ display: "none" }}
+          multiple
+          // ref = {fileInput0 => this.fileInput0 = fileInput0}
         />
         <button type="submit">zapisz do bazy</button>
       </div>

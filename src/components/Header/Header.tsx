@@ -1,10 +1,13 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import "./header.scss";
 
-const Header = () => {
+const Header: FunctionComponent = ({ children }) => {
   return (
     <>
-      <div className="header" />
+      <div className="header">
+        <p className="header__title">Klaudia Pytlarz</p>
+        {children}
+      </div>
     </>
   );
 };

@@ -9,13 +9,13 @@ import Header from "../components/Header/Header";
 const Layout: FunctionComponent = ({ children }) => {
   return (
     <>
+      <Header>
+        <Navigation />
+      </Header>
       <NavLink to="/admin">
         <p className="adminButton">Admin</p>
       </NavLink>
-      <div className="logo">JAKIES LOGO</div>
-      <Navigation />
-      <Header />
-      {children}
+      {/* <div className="logo">JAKIES LOGO</div> */}
     </>
   );
 };
