@@ -1,7 +1,7 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { useState } from "react";
 import "./admin.scss";
 
-const Admin: FunctionComponent = () => {
+const Admin = () => {
   const handleSubmit = () => {
     console.log("poszlo");
   };

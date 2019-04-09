@@ -1,10 +1,16 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import "./home.scss";
+import CardHome from "../../components/CardHome/CardHome";
 
-const Home: FunctionComponent = () => {
+const Home = () => {
   return (
     <>
-      <div className="Home">Home</div>
+      <div className="Home">
+        <CardHome title="zajebista zupa xD" kat="zupy" />
+        <CardHome title="pyszne kotleciki :D" kat="dania glowne" />
+        <CardHome title="zajebista zupa xD" kat="zupy" />
+        <CardHome title="pyszne kotleciki :D" kat="dania glowne" />
+      </div>
     </>
   );
 };

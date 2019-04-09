@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 import "./layout.scss";
@@ -6,17 +6,24 @@ import "./layout.scss";
 import Navigation from "../components/navigation/Navigation";
 import Header from "../components/Header/Header";
 
-const Layout: FunctionComponent = ({ children }) => {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+const Layout = ({ children }: LayoutProps) => {
   return (
-    <>
+    <div className="Layout">
       <Header>
         <Navigation />
       </Header>
       <NavLink to="/admin">
         <p className="adminButton">Admin</p>
       </NavLink>
-      {/* <div className="logo">JAKIES LOGO</div> */}
-    </>
+      <div className="layout__body">
+        <div className="layout__content">{children}</div>
+        <div className="layout__info" />
+      </div>
+    </div>
   );
 };
 

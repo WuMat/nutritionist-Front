@@ -10,3 +10,17 @@
   color: lightblue;
   opacity: 0.5;
 }
+.layout__body {
+  width: 1200px;
+  height: 900px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+}
+.layout__content {
+  width: 900px;
+}
+.layout__info {
+  width: 250px;
+  background-color: yellow;
+}

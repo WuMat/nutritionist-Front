@@ -1,6 +1,6 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 
-const Diet: FunctionComponent = () => {
+const Diet = () => {
   return (
     <>
       <div>dietetyka</div>

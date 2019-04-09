@@ -1,7 +1,10 @@
-import React, { FunctionComponent } from "react";
+import React from "react";
 import "./header.scss";
 
-const Header: FunctionComponent = ({ children }) => {
+interface HeaderProps {
+  children: React.ReactNode;
+}
+const Header = ({ children }: HeaderProps) => {
   return (
     <>
       <div className="header">

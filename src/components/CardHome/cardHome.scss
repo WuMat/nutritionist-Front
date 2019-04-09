@@ -1,0 +1,29 @@
+.CardHome {
+  width: 385px;
+}
+.CardHome__img {
+  width: 385px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 5px;
+
+  img {
+    height: 300px;
+    overflow: hidden;
+  }
+}
+.CardHome__bottom {
+  padding: 0 10px;
+}
+.CardHome__katRat {
+  display: flex;
+  justify-content: space-between;
+}
+.CardHome__title {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 25px;
+}
+.CardHome__description {
+  margin-top: 5px;
+}
