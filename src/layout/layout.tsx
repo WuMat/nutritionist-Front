@@ -21,8 +21,12 @@ const Layout = ({ children }: LayoutProps) => {
       </NavLink>
       <div className="layout__body">
         <div className="layout__content">{children}</div>
-        <div className="layout__info" />
+        <div className="layout__info">
+          <div className="info__title">O mnie</div>
+          <div className="info__fot" />
+        </div>
       </div>
+      <div className="bottom">stopka</div>
     </div>
   );
 };

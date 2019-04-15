@@ -22,5 +22,18 @@
 }
 .layout__info {
   width: 250px;
-  background-color: yellow;
+}
+.bottom {
+  height: 150px;
+  background-color: gray;
+  margin-bottom: 10px;
+}
+.info__title {
+  text-align: center;
+}
+.info__fot {
+  background-color: pink;
+  width: 100%;
+  height: 400px;
+  margin: 20px 0;
 }
