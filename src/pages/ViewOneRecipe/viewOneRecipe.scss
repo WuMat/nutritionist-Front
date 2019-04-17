@@ -60,27 +60,32 @@
   font-size: 30px;
   margin-bottom: 10px;
 }
-.ingredients__wrapp {
-  display: flex;
-  align-items: center;
-  position: relative;
-  i {
-    position: absolute;
-    top: 4px;
-    font-size: 8px;
-  }
-}
-
-.ingredients__ingredienet {
-  margin-bottom: 3px;
-  margin-left: 15px;
-  position: relative;
-}
 
 .bottomWrapper__recipe {
   border-left: 1px solid #969696;
   padding-left: 30px;
   width: 680px;
+
+  h2 {
+    font-family: "pt_serifbold";
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      margin-bottom: 10px;
+      counter-increment: steps;
+      padding-left: 30px;
+      position: relative;
+      &::before {
+        content: counter(steps) ". ";
+        color: #8a867c;
+        position: absolute;
+        left: 5px;
+      }
+    }
+  }
 }
 
 .bottomWrapper__photos {

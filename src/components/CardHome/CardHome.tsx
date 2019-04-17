@@ -24,6 +24,9 @@ const CardHome = ({ kat, title }: CardHomeProps) => {
           tekstem stosowanym jako przykładowy wypełniacz w przemyśle
           poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego
           drukarza
+          <div className="CardHome__Button">
+            <button>Wiecej...</button>
+          </div>
         </div>
       </div>
     </div>

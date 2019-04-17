@@ -1,0 +1,16 @@
+.ingredients__wrapp {
+  display: flex;
+  align-items: center;
+  position: relative;
+  i {
+    position: absolute;
+    top: 4px;
+    font-size: 8px;
+  }
+}
+
+.ingredients__ingredienet {
+  margin-bottom: 5px;
+  margin-left: 15px;
+  position: relative;
+}

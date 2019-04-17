@@ -1,6 +1,6 @@
 .CardHome {
   width: 385px;
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 .CardHome__img {
   width: 385px;
@@ -42,7 +42,28 @@
   border-top: 1px solid #969696;
 }
 .CardHome__description {
+  font-size: 15px;
   margin-top: 5px;
   padding-bottom: 15px;
-  border-bottom: 2px solid #969696;
+}
+.CardHome__Button {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    text-transform: uppercase;
+    padding: 8px 15px;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: #a5d6a7;
+    border: 1px solid #80dd84;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #80dd84;
+    }
+  }
 }

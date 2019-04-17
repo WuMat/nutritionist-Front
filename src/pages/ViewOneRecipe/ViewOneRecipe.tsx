@@ -1,6 +1,8 @@
 import React from "react";
 import "./viewOneRecipe.scss";
 
+import Ingredient from "../../components/Ingredient/Ingredient";
+
 const ViewOneRecipe = () => {
   return (
     <>
@@ -32,47 +34,33 @@ const ViewOneRecipe = () => {
       <div className="bottomWrapper">
         <div className="bottomWrapper__ingredients">
           <p className="ingredients__Title">Składniki:</p>
-          <div className="ingredients__wrapp">
-            <i className="fas fa-check" />
-            <span className="ingredients__ingredienet">Składniki</span>
-          </div>
-          <div className="ingredients__wrapp">
-            <i className="fas fa-check" />
-            <span className="ingredients__ingredienet">Składniki</span>
-          </div>
-          <div className="ingredients__wrapp">
-            <i className="fas fa-check" />
-            <span className="ingredients__ingredienet">Składniki</span>
-          </div>
-          <div className="ingredients__wrapp">
-            <i className="fas fa-check" />
-            <span className="ingredients__ingredienet">Składniki</span>
-          </div>
-          <div className="ingredients__wrapp">
-            <i className="fas fa-check" />
-            <span className="ingredients__ingredienet">Składniki</span>
-          </div>
-          <div className="ingredients__wrapp">
-            <i className="fas fa-check" />
-            <span className="ingredients__ingredienet">Składniki</span>
-          </div>
+          <Ingredient name="Jajko(1 Sztuka)" />
+          <Ingredient name="Mąka" />
+          <Ingredient name="Masło" />
+          <Ingredient name="Serek" />
+          <Ingredient name="Winogrona" />
         </div>
         <div className="bottomWrapper__recipe">
-          Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w
-          przemyśle poligraficznym. Został po raz pierwszy użyty w XV w. przez
-          nieznanego drukarza do wypełnienia tekstem próbnej książki. Pięć
-          wieków później zaczął być używany przemyśle elektronicznym, pozostając
-          praktycznie niezmienionym. Spopularyzował się w latach 60. XX w. wraz
-          z publikacją arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a
-          ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem
-          przeznaczonym do realizacji druków na komputerach osobistych, jak
-          Aldus PageMaker z publikacją arkuszy Letrasetu, zawierających
-          fragmenty Lorem Ipsum, a ostatnio z zawierającym różne wersje Lorem
-          Ipsum oprogramowaniem przeznaczonym do realizacji druków na
-          komputerach osobistych, jak Aldus PageMaker fragmenty Lorem Ipsum, a
-          ostatnio z zawierającym różne wersje Lorem Ipsum oprogramowaniem
-          przeznaczonym do realizacji druków na komputerach osobistych, jak
-          Aldus PageMaker
+          <h2>Przygotowanie:</h2>
+          <ul>
+            <li>
+              Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w
+              przemyśle poligraficznym. Został po raz pierwszy
+            </li>
+            <li>cznie niezmienionym. Spopularyzował si</li>
+            <li>
+              Lorem Ipsum jest tekstem stosowanym jako przykładowy wypełniacz w
+              przemyśle poligraficznym. Został po raz pierwszy użyty w XV w.
+              przez nieznanego drukarza do wypełnienia tekstem próbnej książki.
+              Pięć wieków później zaczął być używany przemyś
+            </li>
+            <li>
+              arkuszy Letrasetu, zawierających fragmenty Lorem Ipsum, a ostatnio
+              z zawierającym różne wersje Lorem Ipsum oprogramowaniem
+              przeznaczonym do realizacji druków na komputerach osobistych, jak
+              Aldus PageMaker z publi
+            </li>
+          </ul>
           <div className="bottomWrapper__photos">PHOTOS</div>
         </div>
       </div>
