@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from "../Rating/Rating";
 import "./cardHome.scss";
 
 interface CardHomeProps {
@@ -17,7 +18,9 @@ const CardHome = ({ kat, title }: CardHomeProps) => {
           <div className="CardHome__kategoria">
             KATEGORIA: <span>{kat.toUpperCase()}</span>
           </div>
-          <div className="CardHome__rating">rating</div>
+          <div className="CardHome__rating">
+            <Rating val={2} quantity={5} />
+          </div>
         </div>
         <div className="CardHome__title">{title.toUpperCase()}</div>
         <div className="CardHome__description">

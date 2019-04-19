@@ -11,7 +11,7 @@
   opacity: 0.5;
 }
 .layout__body {
-  width: 1200px;
+  width: 1250px;
   margin: 50px auto;
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@
   width: 900px;
 }
 .layout__info {
-  width: 250px;
+  width: 270px;
 }
 .bottom {
   height: 150px;
@@ -31,7 +31,8 @@
   text-align: center;
 }
 .info__fot {
-  background-color: pink;
+  font-family: "Muli", sans-serif;
+  color: #777;
   width: 100%;
   height: 400px;
   margin: 20px 0;
