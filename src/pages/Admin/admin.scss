@@ -6,13 +6,70 @@
   flex-wrap: wrap;
 
   input {
-    padding: 6px;
+    padding: 8px;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
   textarea {
+    padding: 6px;
     width: 100%;
-    height: 100px;
+    height: 80px;
+  }
+  p {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 25px;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+  }
+  button {
+    margin-bottom: 15px;
+    padding: 6px 8px;
+  }
+  .Steps {
     margin-bottom: 30px;
+  }
+
+  .input__placeholder {
+    width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+
+    .input__placeholder {
+      margin-top: 10px;
+      padding-left: 30px;
+
+      span {
+        padding-left: 30px;
+      }
+    }
+
+    .ingredient_button {
+      position: absolute;
+      right: -80px;
+      top: 0;
+    }
+
+    span {
+      position: absolute;
+      top: 9px;
+      left: 10px;
+      color: grey;
+      transition: 0.5s;
+      pointer-events: none;
+    }
+
+    input:focus ~ span,
+    input:valid ~ span,
+    textarea:focus ~ span,
+    textarea:valid ~ span {
+      top: -21px;
+      color: #80dd84;
+    }
+  }
+  .addIngredient {
+    margin-left: 40px;
   }
 }

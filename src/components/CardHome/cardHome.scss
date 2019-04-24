@@ -18,7 +18,7 @@
   margin-top: 5px;
 }
 .CardHome__katRat {
-  margin-top: 8px;
+  margin-top: 10px;
   display: flex;
   justify-content: space-between;
 }
@@ -37,14 +37,18 @@
   margin-top: 10px;
   padding-top: 10px;
   font-size: 25px;
-  font-weight: 600;
-  font-family: "pt_serifbold";
-  border-top: 1px solid #969696;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #8e8e8e;
+  border-top: 1px solid rgba(150, 150, 150, 0.4);
 }
 .CardHome__description {
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 5px;
   padding-bottom: 15px;
+  color: #777;
+  font-family: "Muli", sans-serif;
+  line-height: 1.5;
 }
 .CardHome__Button {
   margin-top: 15px;

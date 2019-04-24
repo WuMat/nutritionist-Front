@@ -8,7 +8,9 @@ import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
 
-import recipes from "./store/reducer/recipes";
+import prepare from "./store/reducer/prepare";
+import detail from "./store/reducer/detail";
+import ingredients from "./store/reducer/ingrediens";
 
 declare global {
   interface Window {
@@ -16,7 +18,9 @@ declare global {
   }
 }
 const rootReducer = combineReducers({
-  recipes: recipes
+  prepare: prepare,
+  detail: detail,
+  ingredients: ingredients
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

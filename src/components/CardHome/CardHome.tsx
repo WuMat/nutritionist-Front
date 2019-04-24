@@ -16,13 +16,15 @@ const CardHome = ({ kat, title }: CardHomeProps) => {
       <div className="CardHome__bottom">
         <div className="CardHome__katRat">
           <div className="CardHome__kategoria">
-            KATEGORIA: <span>{kat.toUpperCase()}</span>
+            <span>{kat.charAt(0).toUpperCase() + kat.slice(1)}</span>
           </div>
           <div className="CardHome__rating">
             <Rating val={2} quantity={5} />
           </div>
         </div>
-        <div className="CardHome__title">{title.toUpperCase()}</div>
+        <div className="CardHome__title">
+          {title.charAt(0).toUpperCase() + title.slice(1)}
+        </div>
         <div className="CardHome__description">
           tekstem stosowanym jako przykładowy wypełniacz w przemyśle
           poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego
