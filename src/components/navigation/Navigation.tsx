@@ -2,9 +2,23 @@ import React from "react";
 import "./navigation.scss";
 import { NavLink } from "react-router-dom";
 
-const Navigation = () => {
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
+import * as ActionCreators from "../../store/actionCreator";
+
+interface NavigationProps {
+  ham: boolean;
+  ham_menu: () => void;
+}
+
+const Navigation = ({ ham, ...props }: NavigationProps) => {
   return (
-    <div className="navWrapper">
+    <div
+      className="navWrapper"
+      style={{ transform: ham === true ? "translate(-100%)" : "translate(0)" }}
+    >
+      {console.log(ham)}
+
       <nav className="nav">
         <ul className="nav__element">
           <li>
@@ -47,8 +61,26 @@ const Navigation = () => {
           </li>
         </ul>
       </nav>
+      <div className="close__ham" onClick={props.ham_menu}>
+        <i className="fas fa-times" />
+      </div>
     </div>
   );
 };
 
-export default Navigation;
+const mapStateToProps = (state: any) => {
+  return {
+    ham: state.ui.ham
+  };
+};
+
+const mapDispatchToProps = (dispatch: Dispatch) => {
+  return {
+    ham_menu: () => dispatch(ActionCreators.open())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Navigation);

@@ -11,6 +11,7 @@ import logger from "redux-logger";
 import prepare from "./store/reducer/prepare";
 import detail from "./store/reducer/detail";
 import ingredients from "./store/reducer/ingrediens";
+import ui from "./store/reducer/ui";
 
 declare global {
   interface Window {
@@ -20,7 +21,8 @@ declare global {
 const rootReducer = combineReducers({
   prepare: prepare,
   detail: detail,
-  ingredients: ingredients
+  ingredients: ingredients,
+  ui: ui
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

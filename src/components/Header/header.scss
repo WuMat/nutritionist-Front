@@ -15,9 +15,23 @@
   background-color: rgba(0, 0, 0, 0.2);
   padding: 30px 15px;
 }
+.ham_menu {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+
+  i {
+    font-size: 40px;
+    color: white;
+  }
+}
+
 @media (min-width: 500px) {
+  .ham_menu {
+    display: none;
+  }
   .header {
-    height: 230px;
+    height: 260px;
     position: relative;
   }
   .header__title {
