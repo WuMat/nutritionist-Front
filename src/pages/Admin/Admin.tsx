@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import _ from "lodash";
@@ -35,11 +35,17 @@ const Admin = ({ ...props }: AdminProps) => {
     console.log("poszlo");
   };
 
+  const inputEl = useRef<HTMLInputElement>(null);
+  const onButtonClick = () => {
+    if (inputEl && inputEl.current) {
+      inputEl.current.click();
+    }
+  };
+
   return (
     <>
       <div className="admin">
         <form id="form" onSubmit={handleSubmit} />
-
         <div className="input__placeholder">
           <input
             type="text"
@@ -50,7 +56,6 @@ const Admin = ({ ...props }: AdminProps) => {
           />
           <span>Główny tytuł</span>
         </div>
-
         <div className="input__placeholder">
           <input
             type="number"
@@ -71,7 +76,6 @@ const Admin = ({ ...props }: AdminProps) => {
           />
           <span>Ilość porcji</span>
         </div>
-
         <p className="Steps">Kroki Przygotowania</p>
         {_.isArray(props.clickPrepare) &&
           props.clickPrepare.map(val => (
@@ -92,7 +96,6 @@ const Admin = ({ ...props }: AdminProps) => {
           ))}
         <br />
         <button onClick={props.addPrepare}>Kolejny krok</button>
-
         <p className="Steps">Składniki</p>
         {_.isArray(props.ingredients) &&
           props.ingredients.map(val => (
@@ -151,16 +154,49 @@ const Admin = ({ ...props }: AdminProps) => {
         <button onClick={props.add_ingredient_name}>
           Kolejny Grupa Skladnikow
         </button>
-
-        {/* <input
-          name="imagePreviewUrl1"
-          // onChange={handleSelectFile}
-          type="file"
-          // style={{ display: "none" }}
-          multiple
-          // ref = {fileInput0 => this.fileInput0 = fileInput0}
-        />
-        <button type="submit">zapisz do bazy</button> */}
+        {/* <div className="addImage" onClick={() => fileInput.click()}>
+          {imagePreviewUrl1 ? (
+            <img src={imagePreviewUrl1} />
+            ) : (
+              <div>
+              <i className="fas fa-plus-circle" />
+              <p>DODAJ ZDJĘCIE</p>
+              </div>
+              )}
+              <input
+              name="imagePreviewUrl6"
+              onChange={handleSelectFile}
+              type="file"
+              style={{ display: "none" }}
+              multiple
+              ref={fileInput => (fileInput = fileInput)}
+              />
+            </div> */}
+        <p className="Steps">Zdjęcie głowne</p>
+        <div className="img__main" onClick={onButtonClick}>
+          <i className="fas fa-plus-circle" />
+          <input type="file" ref={inputEl} style={{ display: "none" }} />
+        </div>
+        <p className="Steps">Zdjęcia poboczne</p>
+        <div className="img__group">
+          <div className="img__single" onClick={onButtonClick}>
+            <i className="fas fa-plus-circle" />
+            <input type="file" ref={inputEl} style={{ display: "none" }} />
+          </div>
+          <div className="img__single" onClick={onButtonClick}>
+            <i className="fas fa-plus-circle" />
+            <input type="file" ref={inputEl} style={{ display: "none" }} />
+          </div>
+          <div className="img__single" onClick={onButtonClick}>
+            <i className="fas fa-plus-circle" />
+            <input type="file" ref={inputEl} style={{ display: "none" }} />
+          </div>
+          <div className="img__single" onClick={onButtonClick}>
+            <i className="fas fa-plus-circle" />
+            <input type="file" ref={inputEl} style={{ display: "none" }} />
+          </div>
+          <button type="submit">zapisz do bazy</button>
+        </div>
       </div>
     </>
   );

@@ -72,4 +72,50 @@
   .addIngredient {
     margin-left: 40px;
   }
+  .img__main {
+    border: 1px solid grey;
+    height: 150px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      i {
+        color: #80dd84;
+      }
+    }
+
+    i {
+      font-size: 50px;
+      color: grey;
+      transition: all 0.5s;
+    }
+  }
+  .img__group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .img__single {
+    border: 1px solid grey;
+    height: 100px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+
+    &:hover {
+      i {
+        color: #80dd84;
+      }
+    }
+
+    i {
+      font-size: 50px;
+      color: grey;
+      transition: all 0.5s;
+    }
+  }
 }
