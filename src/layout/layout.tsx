@@ -19,7 +19,7 @@ const Layout = ({ children }: LayoutProps) => {
       <NavLink to="/admin">
         <p className="adminButton">Admin</p>
       </NavLink>
-      {/* <div className="layout__body">
+      <div className="layout__body">
         <div className="layout__content">{children}</div>
         <div className="layout__info">
           <div className="info__title">O mnie</div>
@@ -35,7 +35,7 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </div>
       </div>
-      <div className="bottom">stopka</div> */}
+      <div className="bottom">stopka</div>
     </div>
   );
 };

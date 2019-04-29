@@ -21,7 +21,7 @@ interface IProps {
 class App extends Component<IProps> {
   componentDidMount = () => {
     const width = () => {
-      if (innerWidth < 500) this.props.mobile();
+      if (window.innerWidth < 500) this.props.mobile();
       else this.props.desktop();
     };
     window.addEventListener("resize", width);
