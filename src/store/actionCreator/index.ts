@@ -11,4 +11,4 @@ export {
 
 export { change_input } from "./details";
 
-export { open, close } from "./ui";
+export { open, mobile, desktop } from "./ui";

@@ -14,13 +14,15 @@ import Admin from "./pages/Admin/Admin";
 import ViewOneRecipe from "./pages/ViewOneRecipe/ViewOneRecipe";
 
 interface IProps {
-  ham_menu: () => void;
+  mobile: () => void;
+  desktop: () => void;
 }
 
 class App extends Component<IProps> {
   componentDidMount = () => {
     const width = () => {
-      if (innerWidth > 499) this.props.ham_menu();
+      if (innerWidth < 500) this.props.mobile();
+      else this.props.desktop();
     };
     window.addEventListener("resize", width);
   };
@@ -46,7 +48,8 @@ class App extends Component<IProps> {
 
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    ham_menu: () => dispatch(ActionCreators.close())
+    mobile: () => dispatch(ActionCreators.mobile()),
+    desktop: () => dispatch(ActionCreators.desktop())
   };
 };
 

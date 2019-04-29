@@ -19,7 +19,13 @@ const reducer = (
         ham: !state.ham
       };
 
-    case AdminTypes.CLOSE_HAM: {
+    case AdminTypes.MOBILE: {
+      return {
+        ...state,
+        ham: true
+      };
+    }
+    case AdminTypes.DESKTOP: {
       return {
         ...state,
         ham: false

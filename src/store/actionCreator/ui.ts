@@ -6,8 +6,14 @@ export const open = () => {
   };
 };
 
-export const close = () => {
+export const mobile = () => {
   return {
-    type: AdminTypes.CLOSE_HAM
+    type: AdminTypes.MOBILE
+  };
+};
+
+export const desktop = () => {
+  return {
+    type: AdminTypes.DESKTOP
   };
 };
