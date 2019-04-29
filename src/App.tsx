@@ -25,6 +25,7 @@ class App extends Component<IProps> {
       else this.props.desktop();
     };
     window.addEventListener("resize", width);
+    width();
   };
 
   render() {
