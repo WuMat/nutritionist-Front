@@ -79,6 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
     &:hover {
       i {
@@ -90,6 +91,9 @@
       font-size: 50px;
       color: grey;
       transition: all 0.5s;
+    }
+    img {
+      height: 100%;
     }
   }
   .img__group {
@@ -105,6 +109,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    cursor: pointer;
 
     &:hover {
       i {
@@ -116,6 +121,9 @@
       font-size: 50px;
       color: grey;
       transition: all 0.5s;
+    }
+    img {
+      height: 100%;
     }
   }
 }

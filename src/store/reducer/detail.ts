@@ -4,12 +4,14 @@ interface RecipesState {
   title: string;
   time: number | boolean;
   portion: number | boolean;
+  category: string;
 }
 
 const initialState: RecipesState = {
   title: "",
   time: false,
-  portion: false
+  portion: false,
+  category: ""
 };
 
 const reducer = (
