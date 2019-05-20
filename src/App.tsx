@@ -13,6 +13,7 @@ import Contact from "./pages/Contact/Contact";
 import Admin from "./pages/Admin/Admin";
 import About from "./pages/About/About";
 import ViewOneRecipe from "./pages/ViewOneRecipe/ViewOneRecipe";
+import ViewArticle from "./pages/ViewArticle/ViewArticle";
 
 interface IProps {
   mobile: () => void;
@@ -41,6 +42,7 @@ class App extends Component<IProps> {
             <Route path="/contact" component={Contact} />
             <Route path="/admin" component={Admin} />
             <Route path="/viewRecipe" component={ViewOneRecipe} />
+            <Route path="/viewArticle" component={ViewArticle} />
             <Redirect from="/" to="home" />
           </Switch>
         </Layout>
