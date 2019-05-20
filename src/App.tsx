@@ -8,9 +8,10 @@ import * as ActionCreators from "./store/actionCreator";
 
 import Home from "./pages/Home/Home";
 import Recipes from "./pages/Recipes/Recipes";
-import Diet from "./pages/Diet/Diet";
+import Blog from "./pages/Blog/Blog";
 import Contact from "./pages/Contact/Contact";
 import Admin from "./pages/Admin/Admin";
+import About from "./pages/About/About";
 import ViewOneRecipe from "./pages/ViewOneRecipe/ViewOneRecipe";
 
 interface IProps {
@@ -35,7 +36,8 @@ class App extends Component<IProps> {
           <Switch>
             <Route path="/home" component={Home} />
             <Route path="/recipes" component={Recipes} />
-            <Route path="/diet" component={Diet} />
+            <Route path="/diet" component={Blog} />
+            <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/admin" component={Admin} />
             <Route path="/viewRecipe" component={ViewOneRecipe} />

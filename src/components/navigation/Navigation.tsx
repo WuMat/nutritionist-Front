@@ -22,7 +22,7 @@ const Navigation = ({ ham, ...props }: NavigationProps) => {
       <nav className="nav">
         <ul className="nav__element">
           <li>
-            <NavLink to="/home">Home</NavLink>
+            <NavLink to="/home">Strona Główna</NavLink>
           </li>
           <li>
             <NavLink to="/recipes">Przepisy</NavLink>
@@ -34,31 +34,34 @@ const Navigation = ({ ham, ...props }: NavigationProps) => {
                 <NavLink to="/recipes">Przekąski</NavLink>
               </li>
               <li>
-                <NavLink to="/recipes">Sałatki</NavLink>
-              </li>
-              <li>
                 <NavLink to="/recipes">Zupy</NavLink>
               </li>
               <li>
                 <NavLink to="/recipes">Dania Główne</NavLink>
               </li>
               <li>
-                <NavLink to="/recipes">Kolacje</NavLink>
+                <NavLink to="/recipes">Sałatki</NavLink>
               </li>
               <li>
                 <NavLink to="/recipes">Desery</NavLink>
               </li>
+              <li>
+                <NavLink to="/recipes">Kolacje</NavLink>
+              </li>
             </ul>
           </li>
           <li>
-            <NavLink to="/diet">Dieta</NavLink>
+            <NavLink to="/diet">blog</NavLink>
+          </li>
+          <li>
+            <NavLink to="/about">O nas</NavLink>
           </li>
           <li>
             <NavLink to="/contact">Kontakt</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/viewRecipe">widok</NavLink>
-          </li>
+          </li> */}
         </ul>
       </nav>
       <div className="close__ham" onClick={props.ham_menu}>

@@ -17,7 +17,7 @@ const Header = ({ children, ham, ...props }: HeaderProps) => {
         <div className="ham_menu" onClick={props.ham_menu}>
           <i className="fas fa-bars" />
         </div>
-        <p className="header__title">Klaudia Pytlarz</p>
+        <p className="header__title">Fit Endorfiny</p>
         {children}
       </div>
     </>

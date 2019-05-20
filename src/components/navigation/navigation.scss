@@ -70,7 +70,7 @@
 
   .nav__element {
     display: flex;
-    padding: 0 20px;
+    padding: 0 5px;
     margin: 0;
     height: 45px;
 
@@ -90,7 +90,7 @@
     }
     li {
       list-style-type: none;
-      margin: 0 20px;
+      margin: 0 10px;
       position: relative;
     }
   }
@@ -136,9 +136,13 @@
   }
   .nav__element {
     height: 60px;
+    padding: 0 20px;
 
     a {
       font-size: 20px;
+    }
+    li {
+      margin: 0 20px;
     }
   }
   .nav__nested {

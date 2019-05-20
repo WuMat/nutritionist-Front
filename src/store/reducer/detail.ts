@@ -5,13 +5,15 @@ interface RecipesState {
   time: number | boolean;
   portion: number | boolean;
   category: string;
+  description_short: string;
 }
 
 const initialState: RecipesState = {
   title: "",
   time: false,
   portion: false,
-  category: ""
+  category: "",
+  description_short: ""
 };
 
 const reducer = (

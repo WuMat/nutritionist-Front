@@ -27,7 +27,6 @@ const reducer = (
 ): RecipesState => {
   switch (action.type) {
     case AdminTypes.ADD_INGREDIENT_NAME:
-      console.log(action);
       return {
         ...state,
         ingredients: [
