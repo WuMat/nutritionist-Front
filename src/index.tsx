@@ -12,6 +12,7 @@ import prepare from "./store/reducer/prepare";
 import detail from "./store/reducer/detail";
 import ingredients from "./store/reducer/ingrediens";
 import ui from "./store/reducer/ui";
+import article from "./store/reducer/article";
 
 declare global {
   interface Window {
@@ -22,7 +23,8 @@ const rootReducer = combineReducers({
   prepare: prepare,
   detail: detail,
   ingredients: ingredients,
-  ui: ui
+  ui: ui,
+  article: article
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

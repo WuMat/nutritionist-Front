@@ -63,10 +63,11 @@
   width: 220px;
   margin-bottom: 10px;
 }
-.ingredients__Title {
-  font-family: "pt_serifbold";
-  font-size: 30px;
-  margin-bottom: 10px;
+.ingredients__wrapp {
+  font-family: "Montserrat";
+  font-size: 15px;
+  font-weight: 400;
+  text-align: justify;
 }
 
 .bottomWrapper__recipe {
@@ -81,6 +82,11 @@
     padding: 0;
     li {
       margin-bottom: 10px;
+      font-family: "Montserrat";
+      font-size: 15px;
+      font-weight: 400;
+      text-align: justify;
+      color: #616161;
       counter-increment: steps;
       padding-left: 30px;
       position: relative;
@@ -195,8 +201,6 @@
   }
 
   .bottomWrapper {
-    margin-left: 15px;
-    margin-right: 15px;
     flex-wrap: nowrap;
   }
 
@@ -212,7 +216,6 @@
   }
 
   .comments {
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 0 auto;
   }
 }

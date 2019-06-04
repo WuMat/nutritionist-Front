@@ -17,8 +17,6 @@ const Navigation = ({ ham, ...props }: NavigationProps) => {
       className="navWrapper"
       style={{ transform: ham === true ? "translate(-100%)" : "translate(0)" }}
     >
-      {console.log(ham)}
-
       <nav className="nav">
         <ul className="nav__element">
           <li>

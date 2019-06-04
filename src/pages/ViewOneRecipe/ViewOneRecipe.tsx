@@ -30,7 +30,7 @@ const ViewOneRecipe = () => {
       <div>
         <div className="bottomWrapper">
           <div className="bottomWrapper__ingredients">
-            <p className="ingredients__Title">Składniki:</p>
+            <h2>Składniki:</h2>
             <Ingredient name="Jajko(1 Sztuka)" />
             <Ingredient name="Mąka" />
             <Ingredient name="Masło" />

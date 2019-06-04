@@ -1,5 +1,6 @@
 .article {
-  width: 740px;
+  width: 80%;
+  margin: 0 auto;
 }
 .article__title {
   color: #616161;
@@ -11,7 +12,7 @@
 }
 .article__img {
   margin-top: 40px;
-  max-width: 740px;
+  width: 100%;
 }
 .article__info {
   margin-top: 30px;
