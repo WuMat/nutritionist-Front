@@ -3,7 +3,7 @@ import Recipe from "./Recipe/Recipe";
 import Lifestyle from "./Lifestyle/Lifestyle";
 
 const Admin: React.FC = () => {
-  const [state, setstate] = useState(2);
+  const [state, setstate] = useState();
 
   const handleClick = (val: number) => () => {
     setstate(val);

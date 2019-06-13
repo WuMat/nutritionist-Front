@@ -49,19 +49,13 @@ const Navigation = ({ ham, ...props }: NavigationProps) => {
             </ul>
           </li>
           <li>
-            <NavLink to="/diet">blog</NavLink>
+            <NavLink to="/lifestyle">blog</NavLink>
           </li>
           <li>
             <NavLink to="/about">O nas</NavLink>
           </li>
           <li>
             <NavLink to="/contact">Kontakt</NavLink>
-          </li>
-          <li>
-            <NavLink to="/viewRecipe">widok przepisu</NavLink>
-          </li>
-          <li>
-            <NavLink to="/viewArticle">widok artykulu</NavLink>
           </li>
         </ul>
       </nav>

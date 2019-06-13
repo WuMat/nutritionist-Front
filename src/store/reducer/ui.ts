@@ -2,10 +2,12 @@ import { AdminTypes } from "../action/action";
 
 interface RecipesState {
   ham: boolean;
+  gallery: boolean;
 }
 
 const initialState: RecipesState = {
-  ham: false
+  ham: false,
+  gallery: false
 };
 
 const reducer = (
@@ -29,6 +31,12 @@ const reducer = (
       return {
         ...state,
         ham: false
+      };
+    }
+    case AdminTypes.PHOTOS_GALLERY: {
+      return {
+        ...state,
+        gallery: !state.gallery
       };
     }
     default:

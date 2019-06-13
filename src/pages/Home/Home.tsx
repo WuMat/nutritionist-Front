@@ -6,10 +6,10 @@ const Home = () => {
   return (
     <>
       <div className="Home">
-        <CardHome title="zajebista zupa xD" kat="zupy" />
-        <CardHome title="pyszne kotleciki :D" kat="dania glowne" />
-        <CardHome title="zajebista zupa xD" kat="zupy" />
-        <CardHome title="pyszne kotleciki :D" kat="dania glowne" />
+        {/* <CardHome title="zajebista zupa xD" kat="zupy" /> */}
+        {/* <CardHome title="pyszne kotleciki :D" kat="dania glowne" /> */}
+        {/* <CardHome title="zajebista zupa xD" kat="zupy" /> */}
+        {/* <CardHome title="pyszne kotleciki :D" kat="dania glowne" /> */}
       </div>
     </>
   );

@@ -1,17 +1,36 @@
 import React from "react";
+import { RouteComponentProps, withRouter } from "react-router-dom";
 import Rating from "../Rating/Rating";
 import "./cardHome.scss";
+import { URL } from "../../utils/URL";
 
-interface CardHomeProps {
+interface CardHomeProps extends RouteComponentProps<any> {
   kat: string;
   title: string;
+  description_short: string;
+  main_img: string;
+  id: string;
 }
 
-const CardHome = ({ kat, title }: CardHomeProps) => {
+const CardHome = ({
+  kat,
+  title,
+  description_short,
+  main_img,
+  id,
+  history
+}: CardHomeProps) => {
+  const handleClick = () => {
+    console.warn(history);
+    history.push({
+      pathname: `/recipes/${id}`,
+      state: id
+    });
+  };
   return (
     <div className="CardHome">
       <div className="CardHome__img">
-        <img src={require("../../img/card.jpg")} alt="" />
+        <img src={`${URL}${main_img}`} alt="" />
       </div>
       <div className="CardHome__bottom">
         <div className="CardHome__katRat">
@@ -26,11 +45,9 @@ const CardHome = ({ kat, title }: CardHomeProps) => {
           {title.charAt(0).toUpperCase() + title.slice(1)}
         </div>
         <div className="CardHome__description">
-          tekstem stosowanym jako przykładowy wypełniacz w przemyśle
-          poligraficznym. Został po raz pierwszy użyty w XV w. przez nieznanego
-          drukarza
+          {description_short}
           <div className="CardHome__Button">
-            <button>Wiecej...</button>
+            <button onClick={handleClick}>Wiecej...</button>
           </div>
         </div>
       </div>
@@ -38,4 +55,4 @@ const CardHome = ({ kat, title }: CardHomeProps) => {
   );
 };
 
-export default CardHome;
+export default withRouter(CardHome);

@@ -14,7 +14,6 @@ import Admin from "./pages/Admin/Admin";
 import About from "./pages/About/About";
 import ViewOneRecipe from "./pages/ViewOneRecipe/ViewOneRecipe";
 import ViewArticle from "./pages/ViewArticle/ViewArticle";
-
 interface IProps {
   mobile: () => void;
   desktop: () => void;
@@ -36,13 +35,15 @@ class App extends Component<IProps> {
         <Layout>
           <Switch>
             <Route path="/home" component={Home} />
+            <Route path="/recipes/:id" component={ViewOneRecipe} />
             <Route path="/recipes" component={Recipes} />
-            <Route path="/diet" component={Blog} />
+            <Route path="/lifestyle/:id" component={ViewArticle} />
+            <Route path="/lifestyle" component={Blog} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/admin" component={Admin} />
-            <Route path="/viewRecipe" component={ViewOneRecipe} />
-            <Route path="/viewArticle" component={ViewArticle} />
+            {/* <Route path="/viewRecipe" component={ViewOneRecipe} /> */}
+            {/* <Route path="/viewArticle" component={ViewArticle} /> */}
             <Redirect from="/" to="home" />
           </Switch>
         </Layout>

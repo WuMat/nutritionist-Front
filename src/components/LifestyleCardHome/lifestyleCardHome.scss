@@ -1,0 +1,104 @@
+.LifestyleCardHome {
+  width: 335px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.LifestyleCardHome__img {
+  width: 335px;
+  height: 270px;
+  overflow: hidden;
+  border-radius: 5px;
+
+  img {
+    height: 300px;
+    overflow: hidden;
+  }
+}
+.LifestyleCardHome__bottom {
+  padding: 0 10px;
+  margin-top: 5px;
+}
+.LifestyleCardHome__katRat {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.LifestyleCardHome__kategoria {
+  font-weight: 600;
+  color: #404040;
+  font-size: 13px;
+
+  span {
+    font-weight: 600;
+    color: #969696;
+  }
+}
+.LifestyleCardHome__title {
+  text-align: center;
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size: 25px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  color: #8e8e8e;
+  border-top: 1px solid rgba(150, 150, 150, 0.4);
+}
+.LifestyleCardHome__description {
+  font-size: 14px;
+  margin-top: 5px;
+  padding-bottom: 15px;
+  color: #777;
+  font-family: "Muli", sans-serif;
+  line-height: 1.5;
+}
+.LifestyleCardHome__Button {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+
+  button {
+    text-transform: uppercase;
+    padding: 8px 15px;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: #a5d6a7;
+    border: 1px solid #80dd84;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #80dd84;
+    }
+  }
+}
+@media (min-width: 665px) {
+  .LifestyleCardHome {
+    width: 283px;
+  }
+  .LifestyleCardHome__img {
+    width: 283px;
+    height: 250px;
+  }
+}
+
+@media (min-width: 872px) {
+  .LifestyleCardHome {
+    width: 385px;
+    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .LifestyleCardHome__img {
+    width: 385px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+
+    img {
+      height: 300px;
+      overflow: hidden;
+    }
+  }
+}

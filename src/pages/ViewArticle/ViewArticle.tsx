@@ -1,34 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "../../axios";
+import { RouteComponentProps, withRouter } from "react-router-dom";
+import { URL } from "../../utils/URL";
+
 import "./viewArticle.scss";
 import _ from "lodash";
 
-import { data } from "./data";
-
-interface IProps {
-  data: any;
+interface IProps extends RouteComponentProps<any> {
+  props: any;
 }
 
-const ViewArticle = ({ data }: IProps) => {
+const ViewArticle = ({ ...props }: IProps) => {
+  const [payload, setPayload] = useState();
+  const fetchData = async () => {
+    const data = props.location.state;
+    try {
+      const response = await axios.post("/api/lifestyle/getOne", { data });
+      setPayload(response.data.lifestyle);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <>
-      {!_.isEmpty(data) && (
+      {!_.isEmpty(payload) && (
         <div className="article">
-          <div className="article__title">{data.title}</div>
-          <img className="article__img" src={data.mainImg} alt="" />
+          <div className="article__title">{payload.title}</div>
+          <img
+            className="article__img"
+            src={`${URL}${payload.mainImage}`}
+            alt=""
+          />
           <div className="article__info">
             <span />
-            <p>{data.date}</p>
+            <p>{payload.date}</p>
             <span />
           </div>
-          {_.isArray(data.paragraf) &&
-            data.paragraf.map((val: any, i: number) => (
+          {_.isArray(payload.paragraf) &&
+            payload.paragraf.map((val: any, i: number) => (
               <p key={i} className="epik__description">
                 {val.description}
               </p>
             ))}
 
-          {_.isArray(data.epik) &&
-            data.epik.map((el: any, i: number) => (
+          {_.isArray(payload.epik) &&
+            payload.epik.map((el: any, i: number) => (
               <div key={i}>
                 <p>&nbsp;</p>
                 <p className="epik__title">{el.title}</p>
@@ -36,8 +55,12 @@ const ViewArticle = ({ data }: IProps) => {
                 {el.paragraf.map((el: any, i: any) => (
                   <div key={i}>
                     <p className="epik__description">{el.description}</p>
-                    {el.img.src && (
-                      <img className="article__img" src={el.img.src} alt="" />
+                    {el.img && (
+                      <img
+                        className="article__img"
+                        src={`${URL}${el.img}.jpg`}
+                        alt=""
+                      />
                     )}
                     {el.list && (
                       <ul className="epik__ul">
@@ -58,4 +81,4 @@ const ViewArticle = ({ data }: IProps) => {
   );
 };
 
-export default ViewArticle;
+export default withRouter(ViewArticle);

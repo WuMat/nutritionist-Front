@@ -123,6 +123,7 @@
 .comments__name {
   margin-top: 50px;
   padding-bottom: 20px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #e3231b;
 }
 .comments {
@@ -214,8 +215,22 @@
     justify-content: space-between;
     margin-top: 100px;
   }
+  .photosWrapper__photo {
+    cursor: pointer;
+  }
 
   .comments {
     margin: 0 auto;
+  }
+  .comments_single {
+    font-family: "Montserrat";
+    font-size: 15px;
+    font-weight: 400;
+    text-align: justify;
+    color: #616161;
+  }
+  .comments_nick {
+    margin-top: 10px !important;
+    text-align: right;
   }
 }

@@ -1,14 +1,14 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, Children } from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import _ from "lodash";
 import axios from "../../../axios";
-
+import { ImageProps } from "../../../store/reducer/imageRecipe";
 import "../admin.scss";
 
 import * as ActionCreators from "../../../store/actionCreator";
 
-interface RecipeProps {
+interface RecipeProps extends ImageProps {
   title: string;
   time: number | any;
   portion: number | any;
@@ -33,26 +33,10 @@ interface RecipeProps {
   ingredient_value: (id: string, val: string) => void;
   add_ingredient: (id: string) => void;
   remove_ingredient: (id: string) => void;
+  image_save: (name: string, src: any, file: any, id: string) => void;
 }
-
-interface imgState {
-  img_main: { src: string | null; file: any };
-  img1: { src: string | null; file: any };
-  img2: { src: string | null; file: any };
-  img3: { src: string | null; file: any };
-  img4: { src: string | null; file: any };
-}
-
-const initState = {
-  img_main: { src: null, file: null },
-  img1: { src: null, file: null },
-  img2: { src: null, file: null },
-  img3: { src: null, file: null },
-  img4: { src: null, file: null }
-};
 
 const Recipe = ({ ...props }: RecipeProps) => {
-  const [img, setImg] = useState<imgState>(initState);
   const handleSubmit = () => {
     console.log("poszlo");
   };
@@ -88,41 +72,57 @@ const Recipe = ({ ...props }: RecipeProps) => {
     }
   };
 
+  const makeid = (length: number) => {
+    var result = "";
+    var characters =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  };
+
   const handleSelectFile = (e: any) => {
     console.log("asd");
     let reader = new FileReader();
     const name = e.target.name;
+    const nameForSection = makeid(10) + Date.now();
     let file = e.target.files[0];
     reader.onloadend = () => {
-      setImg({
-        ...img,
-        [name]: {
-          src: reader.result,
-          file: file
-        }
-      });
+      const src = reader.result;
+      props.image_save(name, src, file, nameForSection);
     };
     reader.readAsDataURL(file);
   };
 
   const handleClick = async () => {
     const formData = new FormData();
-    console.log(img);
+    const data = [
+      `${props.img1.id}.jpg`,
+      `${props.img2.id}.jpg`,
+      `${props.img3.id}.jpg`,
+      `${props.img4.id}.jpg`
+    ];
 
+    console.log(data);
     formData.append("title", props.title);
     formData.append("timePrepare", props.time);
     formData.append("portion", props.portion);
     formData.append("category", props.category);
-    formData.append("stepsPrepare", props.clickPrepare);
-    formData.append("ingredient", props.ingredients);
-    formData.append("image", img.img_main.file, "Main image.jpg");
-    formData.append("image", img.img1.file);
-    formData.append("image", img.img2.file);
-    formData.append("image", img.img3.file);
-    formData.append("image", img.img4.file);
+    formData.append("description_short", props.description_short);
+    formData.append("stepsPrepare", JSON.stringify(props.clickPrepare));
+    formData.append("ingredient", JSON.stringify(props.ingredients));
+    formData.append("main_img", `${props.img_main.id}.jpg`);
+    formData.append("imagesName", JSON.stringify(data));
+    formData.append("image", props.img_main.file, `${props.img_main.id}.jpg`);
+    formData.append("image", props.img1.file, `${props.img1.id}.jpg`);
+    formData.append("image", props.img2.file, `${props.img2.id}.jpg`);
+    formData.append("image", props.img3.file, `${props.img3.id}.jpg`);
+    formData.append("image", props.img4.file, `${props.img4.id}.jpg`);
 
     try {
-      const send = await axios.post("/api/recipe", formData);
+      const send = await axios.post("/api/recipe/create", formData);
       console.log(send);
     } catch (error) {
       console.log("Jebany bład");
@@ -260,8 +260,8 @@ const Recipe = ({ ...props }: RecipeProps) => {
         </button>
         <p className="Steps">Zdjęcie głowne</p>
         <div className="img__main" onClick={onButtonClick0}>
-          {img.img_main.src ? (
-            <img src={img.img_main.src} />
+          {props.img_main.src ? (
+            <img src={props.img_main.src} />
           ) : (
             <i className="fas fa-plus-circle" />
           )}
@@ -276,8 +276,8 @@ const Recipe = ({ ...props }: RecipeProps) => {
         <p className="Steps">Zdjęcia poboczne</p>
         <div className="img__group">
           <div className="img__single" onClick={onButtonClick1}>
-            {img.img1.src ? (
-              <img src={img.img1.src} />
+            {props.img1.src ? (
+              <img src={props.img1.src} />
             ) : (
               <i className="fas fa-plus-circle" />
             )}
@@ -290,8 +290,8 @@ const Recipe = ({ ...props }: RecipeProps) => {
             />
           </div>
           <div className="img__single" onClick={onButtonClick2}>
-            {img.img2.src ? (
-              <img src={img.img2.src} />
+            {props.img2.src ? (
+              <img src={props.img2.src} />
             ) : (
               <i className="fas fa-plus-circle" />
             )}
@@ -304,8 +304,8 @@ const Recipe = ({ ...props }: RecipeProps) => {
             />
           </div>
           <div className="img__single" onClick={onButtonClick3}>
-            {img.img3.src ? (
-              <img src={img.img3.src} />
+            {props.img3.src ? (
+              <img src={props.img3.src} />
             ) : (
               <i className="fas fa-plus-circle" />
             )}
@@ -318,8 +318,8 @@ const Recipe = ({ ...props }: RecipeProps) => {
             />
           </div>
           <div className="img__single" onClick={onButtonClick4}>
-            {img.img4.src ? (
-              <img src={img.img4.src} />
+            {props.img4.src ? (
+              <img src={props.img4.src} />
             ) : (
               <i className="fas fa-plus-circle" />
             )}
@@ -331,8 +331,10 @@ const Recipe = ({ ...props }: RecipeProps) => {
               onChange={handleSelectFile}
             />
           </div>
-          <button onClick={handleClick}>zapisz do bazy</button>
         </div>
+        <button className="sendButton" onClick={handleClick}>
+          -- WYSLIJ --
+        </button>
       </div>
     </>
   );
@@ -347,7 +349,12 @@ const mapStateToProps = (state: any) => {
     portion: state.detail.portion,
     category: state.detail.category,
     ingredients: state.ingredients.ingredients,
-    description_short: state.detail.description_short
+    description_short: state.detail.description_short,
+    img_main: state.img.img_main,
+    img1: state.img.img1,
+    img2: state.img.img2,
+    img3: state.img.img3,
+    img4: state.img.img4
   };
 };
 
@@ -368,7 +375,9 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
       dispatch(ActionCreators.ingredient_value(id, val)),
     add_ingredient: (id: string) => dispatch(ActionCreators.add_ingredient(id)),
     remove_ingredient: (id: string) =>
-      dispatch(ActionCreators.remove_ingredient(id))
+      dispatch(ActionCreators.remove_ingredient(id)),
+    image_save: (name: string, src: any, file: any, id: string) =>
+      dispatch(ActionCreators.image_save(name, src, file, id))
   };
 };
 

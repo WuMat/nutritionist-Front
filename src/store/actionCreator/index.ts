@@ -11,7 +11,7 @@ export {
 
 export { change_input } from "./details";
 
-export { open, mobile, desktop } from "./ui";
+export { open, mobile, desktop, photos_gallery } from "./ui";
 
 export {
   add_article_header,
@@ -30,3 +30,5 @@ export {
   add_img_section,
   delete_img_section
 } from "./article";
+
+export { image_save } from "./imageRecipe";

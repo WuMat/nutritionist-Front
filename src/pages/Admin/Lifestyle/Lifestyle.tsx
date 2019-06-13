@@ -4,7 +4,7 @@ import { Dispatch } from "redux";
 import _ from "lodash";
 import axios from "../../../axios";
 import { ArticleState } from "../../../store/reducer/article";
-import ViewArticle from "../../../pages/ViewArticle/ViewArticle";
+import Podglad from "../../../pages/ViewArticle/Podglad";
 import "../admin.scss";
 
 import * as ActionCreators from "../../../store/actionCreator";
@@ -62,7 +62,6 @@ const Lifestyle = ({ ...props }: LifestyleProps) => {
           src: src
         });
       }
-      console.log(id, idDeep);
       if (name === "name") {
         props.add_img_section(id!, idDeep!, {
           name: nameForSection,
@@ -100,8 +99,6 @@ const Lifestyle = ({ ...props }: LifestyleProps) => {
       }))
     }));
 
-    console.log(data);
-
     formData.append("title", props.title);
     formData.append("description_short", props.description_short);
     formData.append("mainImage", `${props.mainImg.name}.jpg`);
@@ -116,7 +113,7 @@ const Lifestyle = ({ ...props }: LifestyleProps) => {
     );
 
     try {
-      const send = await axios.post("/api/lifestyle", formData);
+      const send = await axios.post("/api/lifestyle/getAll", formData);
       console.log(send);
     } catch (error) {
       console.log("Jebany bład");
@@ -289,7 +286,7 @@ const Lifestyle = ({ ...props }: LifestyleProps) => {
           <button onClick={props.add_section}> dodaj kolejna sekcje</button>
         </div>
       )}
-      {view && <ViewArticle data={props.dataView} />}
+      {view && <Podglad data={props.dataView} />}
       <button className="sendButton" onClick={handleClick}>
         -- WYSLIJ --
       </button>

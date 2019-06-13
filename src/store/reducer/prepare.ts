@@ -1,6 +1,6 @@
 import { AdminTypes } from "../action/action";
 
-interface RecipesState {
+export interface RecipesState {
   clicker: number;
   clickPrepare: { id: string; val: string }[];
 }

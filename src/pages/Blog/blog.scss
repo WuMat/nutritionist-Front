@@ -1,11 +1,11 @@
-.Recipes {
+.blog {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 @media (min-width: 665px) {
-  .Recipes {
+  .blog {
     justify-content: space-between;
   }
 }

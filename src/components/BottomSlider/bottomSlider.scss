@@ -1,0 +1,59 @@
+.BottomSlider {
+  width: 100%;
+  // background-color: #f5f5f5;
+  overflow: hidden;
+  position: relative;
+
+  .BottomSlider__items {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    animation: carouselAnim 40s infinite alternate linear;
+
+    .BottomSlider__item {
+      background-color: aquamarine;
+      position: relative;
+      width: 300px;
+      height: 100px;
+      margin: 1em;
+      padding: 0.5em;
+      border-radius: 10px;
+      box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.05);
+    }
+
+    @keyframes carouselAnim {
+      from {
+        transform: translate(0, 0);
+      }
+      to {
+        transform: translate(calc(-100% + (6 * 300px)));
+      }
+    }
+  }
+  .BottomSlider__faders {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+
+    .BottomSlider__faders--left,
+    .BottomSlider__faders--right {
+      background: linear-gradient(
+        to right,
+        rgb(255, 255, 255) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      width: 20%;
+      height: 100%;
+      position: absolute;
+      z-index: 200;
+    }
+    .BottomSlider__faders--left {
+      right: 0;
+      background: linear-gradient(
+        to left,
+        rgb(255, 255, 255) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+  }
+}

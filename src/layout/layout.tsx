@@ -5,6 +5,7 @@ import "./layout.scss";
 
 import Navigation from "../components/navigation/Navigation";
 import Header from "../components/Header/Header";
+import BottomSlider from "../components/BottomSlider/BottomSlider";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -35,7 +36,9 @@ const Layout = ({ children }: LayoutProps) => {
           </div>
         </div>
       </div>
-      <div className="bottom">stopka</div>
+      <div className="bottom">
+        <BottomSlider />
+      </div>
     </div>
   );
 };

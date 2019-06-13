@@ -17,3 +17,9 @@ export const desktop = () => {
     type: AdminTypes.DESKTOP
   };
 };
+
+export const photos_gallery = () => {
+  return {
+    type: AdminTypes.PHOTOS_GALLERY
+  };
+};

@@ -1,7 +1,6 @@
 import { AdminTypes } from "../action/action";
-import Admin from "../../pages/Admin/Admin";
 
-interface RecipesState {
+export interface RecipesState {
   clicker: number;
   ingredients: {
     id: string;
