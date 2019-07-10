@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import axios from "../../axios";
 
 import "./rating.scss";
 
 interface RatingProps {
   val: number;
   quantity: number;
+  id: any;
 }
 
 interface StateRating {
@@ -26,21 +28,32 @@ const quntityStars = (val: number, quantity: number) => {
   return allArr;
 };
 
-const Rating = ({ val, quantity }: RatingProps) => {
+const Rating = ({ val, quantity, id }: RatingProps) => {
   const [stars, setStars] = useState<StateRating>({
     data: quntityStars(val, quantity)
   });
+  const [starsClick, setStarsClick] = useState(val);
 
   const mouseEnter = (i: number) => {
     setStars({ data: quntityStars(i + 1, quantity) });
   };
 
   const mouseLeave = () => {
-    setStars({ data: quntityStars(val, quantity) });
+    setStars({ data: quntityStars(starsClick, quantity) });
   };
 
-  const handleClick = (i: number) => {
-    console.log(i + 1);
+  const handleClick = async (i: number) => {
+    const rateClick = i + 1;
+    setStarsClick(rateClick);
+    const data = {
+      id: id,
+      rate: rateClick
+    };
+    try {
+      await axios.post("/api/recipe/update", data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (

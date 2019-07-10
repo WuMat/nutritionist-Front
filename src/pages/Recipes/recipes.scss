@@ -4,6 +4,16 @@
   flex-wrap: wrap;
 }
 
+.recipes__category {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  div {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+}
+
 @media (min-width: 665px) {
   .Recipes {
     justify-content: space-between;

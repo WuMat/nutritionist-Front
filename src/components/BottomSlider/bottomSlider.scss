@@ -8,17 +8,22 @@
     display: flex;
     align-items: center;
     width: fit-content;
-    animation: carouselAnim 40s infinite alternate linear;
+    animation: carouselAnim 30s infinite alternate linear;
 
     .BottomSlider__item {
-      background-color: aquamarine;
       position: relative;
-      width: 300px;
-      height: 100px;
+      width: 200px;
       margin: 1em;
       padding: 0.5em;
-      border-radius: 10px;
-      box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+
+      img {
+        border-radius: 10px;
+        cursor: pointer;
+        bottom: 0;
+        box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.05);
+        width: 100%;
+      }
     }
 
     @keyframes carouselAnim {

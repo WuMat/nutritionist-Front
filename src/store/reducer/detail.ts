@@ -12,7 +12,7 @@ const initialState: RecipesState = {
   title: "",
   time: false,
   portion: false,
-  category: "",
+  category: "Śniadania",
   description_short: ""
 };
 

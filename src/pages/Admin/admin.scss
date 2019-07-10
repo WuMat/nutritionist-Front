@@ -17,7 +17,8 @@
   justify-content: center;
   flex-wrap: wrap;
 
-  input {
+  input,
+  select {
     padding: 8px;
     width: 100%;
     margin-bottom: 20px;
@@ -76,6 +77,8 @@
 
     input:focus ~ span,
     input:valid ~ span,
+    select:focus ~ span,
+    select:valid ~ span,
     textarea:focus ~ span,
     textarea:valid ~ span {
       top: -21px;

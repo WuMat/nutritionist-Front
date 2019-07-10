@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import _ from "lodash";
 import axios from "../../axios";
+import Pagination from "../../components/Pagination/Pagination";
 import LifestyleCardHome from "../../components/LifestyleCardHome/LifestyleCardHome";
 
 import "./blog.scss";
 
 const Blog = (): JSX.Element => {
   const [data, setData] = useState();
+  const [page, setPage] = useState(1);
   const fetchData = async () => {
     try {
       const data = await axios.post("/api/lifestyle/getAll");
@@ -21,6 +23,10 @@ const Blog = (): JSX.Element => {
     fetchData();
   }, []);
 
+  const handleClickPage = (val: number) => {
+    console.log(val);
+  };
+
   return (
     <div className="blog">
       {console.log(data)}
@@ -34,6 +40,9 @@ const Blog = (): JSX.Element => {
             id={el._id}
           />
         ))}
+      {_.isArray(data) && (
+        <Pagination total={40} page={page} onChange={handleClickPage} />
+      )}
     </div>
   );
 };

@@ -32,3 +32,5 @@ export {
 } from "./article";
 
 export { image_save } from "./imageRecipe";
+
+export { fetch_all_data } from "./HomeApiRequest";

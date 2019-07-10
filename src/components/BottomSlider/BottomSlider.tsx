@@ -1,10 +1,15 @@
-import React, { FC } from "react";
+import React from "react";
+import _ from "lodash";
+import { URL } from "../../utils/URL";
 import "./bottomSlider.scss";
 
 interface IProps {
-  name: string;
+  images: any;
 }
-const BottomSlider: FC = () => {
+const BottomSlider = ({ images }: IProps) => {
+  const handleClick = (val: string) => () => {
+    console.log(val);
+  };
   return (
     <>
       <div className="BottomSlider">
@@ -13,14 +18,16 @@ const BottomSlider: FC = () => {
           <div className="BottomSlider__faders--right" />
         </div>
         <div className="BottomSlider__items">
-          <div className="BottomSlider__item">cos</div>
-          <div className="BottomSlider__item">cos</div>
-          <div className="BottomSlider__item">cos</div>
-          <div className="BottomSlider__item">cos</div>
-          <div className="BottomSlider__item">cos</div>
-          <div className="BottomSlider__item">cos</div>
-          <div className="BottomSlider__item">cos</div>
-          <div className="BottomSlider__item">cos</div>
+          {_.isArray(images) &&
+            images.map((el: any) => (
+              <div
+                key={el._id}
+                className="BottomSlider__item"
+                onClick={handleClick(el._id)}
+              >
+                <img src={`${URL}${el.main_img}`} />
+              </div>
+            ))}
         </div>
       </div>
     </>

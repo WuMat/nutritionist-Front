@@ -164,13 +164,19 @@ const Recipe = ({ ...props }: RecipeProps) => {
           <span>Ilość porcji</span>
         </div>
         <div className="input__placeholder">
-          <input
-            type="text"
-            name="category"
-            required={true}
+          <select
             value={props.category}
             onChange={e => props.handleChange(e.target.name, e.target.value)}
-          />
+            name="category"
+          >
+            <option>Śniadania</option>
+            <option>Przekąski</option>
+            <option>Zupy</option>
+            <option>Dania Główne</option>
+            <option>Sałatki</option>
+            <option>Desery</option>
+            <option>Kolacje</option>
+          </select>
           <span>Kategoria</span>
         </div>
         <div className="input__placeholder">

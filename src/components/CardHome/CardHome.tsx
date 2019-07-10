@@ -10,6 +10,7 @@ interface CardHomeProps extends RouteComponentProps<any> {
   description_short: string;
   main_img: string;
   id: string;
+  rate: number;
 }
 
 const CardHome = ({
@@ -18,7 +19,8 @@ const CardHome = ({
   description_short,
   main_img,
   id,
-  history
+  history,
+  rate
 }: CardHomeProps) => {
   const handleClick = () => {
     console.warn(history);
@@ -38,7 +40,7 @@ const CardHome = ({
             <span>{kat.charAt(0).toUpperCase() + kat.slice(1)}</span>
           </div>
           <div className="CardHome__rating">
-            <Rating val={2} quantity={5} />
+            <Rating val={rate} quantity={5} id={id} />
           </div>
         </div>
         <div className="CardHome__title">

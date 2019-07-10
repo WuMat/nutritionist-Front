@@ -26,25 +26,51 @@ const Navigation = ({ ham, ...props }: NavigationProps) => {
             <NavLink to="/recipes">Przepisy</NavLink>
             <ul className="nav__nested">
               <li>
-                <NavLink to="/recipes">Śniadania</NavLink>
+                <NavLink
+                  to={{ pathname: "/recipes", state: { name: "Śniadania" } }}
+                >
+                  Śniadania
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/recipes">Przekąski</NavLink>
+                <NavLink
+                  to={{ pathname: "/recipes", state: { name: "Przekąski" } }}
+                >
+                  Przekąski
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/recipes">Zupy</NavLink>
+                <NavLink to={{ pathname: "/recipes", state: { name: "Zupy" } }}>
+                  Zupy
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/recipes">Dania Główne</NavLink>
+                <NavLink
+                  to={{ pathname: "/recipes", state: { name: "Dania Główne" } }}
+                >
+                  Dania Główne
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/recipes">Sałatki</NavLink>
+                <NavLink
+                  to={{ pathname: "/recipes", state: { name: "Sałatki" } }}
+                >
+                  Sałatki
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/recipes">Desery</NavLink>
+                <NavLink
+                  to={{ pathname: "/recipes", state: { name: "Desery" } }}
+                >
+                  Desery
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/recipes">Kolacje</NavLink>
+                <NavLink
+                  to={{ pathname: "/recipes", state: { name: "Kolacje" } }}
+                >
+                  Kolacje
+                </NavLink>
               </li>
             </ul>
           </li>

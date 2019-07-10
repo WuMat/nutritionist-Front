@@ -18,7 +18,6 @@ const CardHome = ({ ...props }: CardHomeProps) => {
       state: props.id
     });
   };
-  console.log(props);
   return (
     <div className="LifestyleCardHome">
       <div className="LifestyleCardHome__img">

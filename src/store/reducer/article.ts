@@ -157,7 +157,7 @@ const reducer = (
                 paragraf: el.paragraf.map((elDeep, i) =>
                   i === action.idDeep
                     ? {
-                        description: "",
+                        description: elDeep.description,
                         img: elDeep.img,
                         list: [...elDeep.list, ""]
                       }
@@ -178,7 +178,7 @@ const reducer = (
                 paragraf: el.paragraf.map((elDeep, i) =>
                   i === action.idDeep
                     ? {
-                        description: "",
+                        description: elDeep.description,
                         img: elDeep.img,
                         list: elDeep.list.map((elList, i) =>
                           i === action.idElement ? action.val : elList
@@ -201,7 +201,7 @@ const reducer = (
                 paragraf: el.paragraf.map((elDeep, i) =>
                   i === action.idDeep
                     ? {
-                        description: "",
+                        description: elDeep.description,
                         img: elDeep.img,
                         list: elDeep.list.filter(
                           (el, i) => i !== action.idElement

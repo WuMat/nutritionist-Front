@@ -14,7 +14,8 @@ import ingredients from "./store/reducer/ingrediens";
 import ui from "./store/reducer/ui";
 import article from "./store/reducer/article";
 import img from "./store/reducer/imageRecipe";
-
+import homeApi from "./store/reducer/HomeApiRequest";
+import { fetch_all_data } from "./store/actionCreator/HomeApiRequest";
 declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
@@ -26,7 +27,8 @@ const rootReducer = combineReducers({
   ingredients: ingredients,
   ui: ui,
   article: article,
-  img: img
+  img: img,
+  homeApi: homeApi
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -35,6 +37,7 @@ const store = createStore(
   // composeEnhancers(applyMiddleware(logger, thunk))
   composeEnhancers(applyMiddleware(thunk))
 );
+store.dispatch<any>(fetch_all_data());
 
 ReactDOM.render(
   <Provider store={store}>

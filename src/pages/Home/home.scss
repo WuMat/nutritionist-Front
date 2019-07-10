@@ -4,6 +4,10 @@
   flex-wrap: wrap;
 }
 
+.home__pagination {
+  width: 100%;
+}
+
 @media (min-width: 665px) {
   .Home {
     justify-content: space-between;

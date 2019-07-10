@@ -49,7 +49,7 @@ const ViewOneRecipe = ({ ...props }: CardHomeProps) => {
       note: comments
     };
     try {
-      const response = await axios.post("/api/recipe/update", { data });
+      const response = await axios.post("/api/recipe/update", data);
       setComment(initState);
     } catch (error) {
       console.log(error);
@@ -78,7 +78,7 @@ const ViewOneRecipe = ({ ...props }: CardHomeProps) => {
             <p className="topWrapper__title">{payload.title}</p>
             <div className="topWrapper__Details">
               <div className="rating">
-                <Rating val={3} quantity={5} />
+                <Rating val={payload.rate} quantity={5} id={payload._id} />
               </div>
               <div className="details__time">
                 <i className="fas fa-clock" /> PRZYGOTOWANIE:{" "}
@@ -128,12 +128,14 @@ const ViewOneRecipe = ({ ...props }: CardHomeProps) => {
             <div className="comments">
               <h3 className="comments__name">Komentarze</h3>
               {!_.isEmpty(payload.note) &&
-                payload.note.map((el: any) => (
-                  <div key={el._id} className="comments_single">
-                    {el.comment}
-                    <p className="comments_nick">{el.nick}</p>
-                  </div>
-                ))}
+                payload.note
+                  .filter((el: any) => el)
+                  .map((el: any) => (
+                    <div key={el._id} className="comments_single">
+                      {el.comment}
+                      <p className="comments_nick">{el.nick}</p>
+                    </div>
+                  ))}
               <p>SMAKOWAŁ CI PRZEPIS? CHCESZ PODZIELIĆ SIĘ SWOJĄ OPINIĄ?</p>
               <form>
                 <textarea

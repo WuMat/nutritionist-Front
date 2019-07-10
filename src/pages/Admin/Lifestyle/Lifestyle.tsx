@@ -113,7 +113,7 @@ const Lifestyle = ({ ...props }: LifestyleProps) => {
     );
 
     try {
-      const send = await axios.post("/api/lifestyle/getAll", formData);
+      const send = await axios.post("/api/lifestyle/create", formData);
       console.log(send);
     } catch (error) {
       console.log("Jebany bład");

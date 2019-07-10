@@ -1,8 +1,6 @@
 .LifestyleCardHome {
   width: 335px;
-  margin-bottom: 50px;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin: 10px 20px;
 }
 .LifestyleCardHome__img {
   width: 335px;
@@ -86,9 +84,6 @@
 @media (min-width: 872px) {
   .LifestyleCardHome {
     width: 385px;
-    margin-bottom: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
   }
   .LifestyleCardHome__img {
     width: 385px;
