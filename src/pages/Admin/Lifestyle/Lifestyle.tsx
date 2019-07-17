@@ -31,6 +31,7 @@ interface LifestyleProps extends ArticleState {
   add_value_section: (id: number, idDeep: number, val: string) => void;
   add_img_section: (id: number, idDeep: number, val: any) => void;
   delete_img_section: (id: number, idDeep: number) => void;
+  reset_form: () => void;
 }
 
 const Lifestyle = ({ ...props }: LifestyleProps) => {
@@ -115,6 +116,7 @@ const Lifestyle = ({ ...props }: LifestyleProps) => {
     try {
       const send = await axios.post("/api/lifestyle/create", formData);
       console.log(send);
+      props.reset_form();
     } catch (error) {
       console.log("Jebany bład");
     }
@@ -333,7 +335,8 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
     add_img_section: (id: number, idDeep: number, val: any) =>
       dispatch(ActionCreators.add_img_section(id, idDeep, val)),
     delete_img_section: (id: number, idDeep: number) =>
-      dispatch(ActionCreators.delete_img_section(id, idDeep))
+      dispatch(ActionCreators.delete_img_section(id, idDeep)),
+    reset_form: () => dispatch(ActionCreators.clear_article())
   };
 };
 

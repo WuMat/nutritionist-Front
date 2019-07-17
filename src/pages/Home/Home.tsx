@@ -15,7 +15,6 @@ const Home = ({ payload }: IProps) => {
   const [slicePayload, setSlicePayload] = React.useState();
 
   React.useEffect(() => {
-    console.log(payload);
     if (page === 1) {
       setSlicePayload(payload.slice(page - 1, page + 3));
     } else {
@@ -32,7 +31,7 @@ const Home = ({ payload }: IProps) => {
         !_.isEmpty(slicePayload) &&
         slicePayload.map((el: any) => (
           <div key={el._id}>
-            {el.type === 1 && (
+            {el.type === 2 && (
               <LifestyleCardHome
                 key={el._id}
                 id={el._id}
@@ -42,7 +41,7 @@ const Home = ({ payload }: IProps) => {
               />
             )}
 
-            {el.type === 2 && (
+            {el.type === 1 && (
               <RecipeCardHome
                 key={el._id}
                 kat={el.category}

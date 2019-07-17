@@ -74,7 +74,45 @@
     margin: 0;
     height: 45px;
 
+    li {
+      list-style-type: none;
+      position: relative;
+      margin-bottom: 0px;
+      transition: all 0.8s;
+
+      &::after {
+        transition: all 0.5s;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid green;
+        height: 43px;
+        transform: scale(0);
+      }
+      &::before {
+        transition: all 0.5s;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        border: 1px solid green;
+        height: 43px;
+        transform: scale(0);
+      }
+      &:hover {
+        background-color: rgba(142, 142, 142, 0.2);
+        &::after {
+          transform: scale(1);
+        }
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
     a {
+      padding: 0 10px;
+
       border-bottom: none;
       text-decoration: none;
       margin-left: 0px;
@@ -87,11 +125,6 @@
       &:hover {
         color: green;
       }
-    }
-    li {
-      list-style-type: none;
-      margin: 0 10px;
-      position: relative;
     }
   }
   .nav__element li:hover > .nav__nested {
@@ -119,8 +152,17 @@
       display: flex;
       justify-content: center;
       margin: 0;
-      padding: 0 10px;
       border-top: 1px solid green;
+      position: relative;
+
+      &::after {
+        content: "";
+        border: none;
+      }
+      &::before {
+        content: "";
+        border: none;
+      }
       &:first-child {
         border-top: none;
       }
@@ -130,28 +172,77 @@
     }
   }
 }
+.activeLink {
+  background-color: rgba(142, 142, 142, 0.2);
+  position: relative;
+
+  &::after {
+    transition: all 1s;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid green;
+    height: 43px;
+    transform: scale(1);
+  }
+  &::before {
+    transition: all 1s;
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: 1px solid green;
+    height: 43px;
+    transform: scale(1);
+  }
+}
 @media (min-width: 700px) {
   .navWrapper {
     top: 269px;
   }
   .nav__element {
     height: 60px;
-    padding: 0 20px;
 
     a {
       font-size: 20px;
+      padding: 0 20px;
     }
     li {
-      margin: 0 20px;
+      &::after {
+        height: 58px;
+      }
+      &::before {
+        height: 58px;
+      }
+      &:hover {
+        background-color: rgba(142, 142, 142, 0.2);
+        &::after {
+          transform: scale(1);
+        }
+        &::before {
+          transform: scale(1);
+        }
+      }
     }
   }
   .nav__nested {
     bottom: 55px;
+    left: -30px;
     li {
       height: 38px;
+      width: 180px;
       a {
         font-size: 18px;
       }
+    }
+  }
+  .activeLink {
+    &::after {
+      height: 58px;
+    }
+    &::before {
+      height: 58px;
     }
   }
 }
@@ -170,90 +261,3 @@
     }
   }
 }
-
-// .navWrapper {
-//   position: absolute;
-//   top: 199px;
-//   background-color: white;
-//   width: 100%;
-//   opacity: 0.8;
-//   transform: translate(0);
-
-//   &::before {
-//     content: "";
-//     display: block;
-//     width: 100%;
-//     height: 1px;
-//     background-color: white;
-//     position: absolute;
-//     top: -2px;
-//   }
-// }
-
-// .nav {
-//   width: 100%;
-//   min-width: 360px;
-//   display: flex;
-//   justify-content: center;
-//   box-shadow: 0px 2px 5px rgba(11, 11, 11, 0.1);
-//   color: rgb(142, 142, 142);
-//   font-size: 20px;
-// }
-
-// .nav__element {
-//   display: flex;
-//   padding: 0 20px;
-//   margin: 0;
-//   height: 60px;
-
-//   a {
-//     border-bottom: none;
-//     text-decoration: none;
-//     margin-left: 0px;
-//     align-items: center;
-//     display: flex;
-//     color: black;
-//     height: 100%;
-//     transition: all 0.4s;
-//     &:hover {
-//       color: green;
-//     }
-//   }
-//   li {
-//     list-style-type: none;
-//     margin: 0 20px;
-//     position: relative;
-//   }
-// }
-// .nav__element li:hover > .nav__nested {
-//   opacity: 1;
-//   visibility: visible;
-//   transform: translateY(0%);
-// }
-// .nav__nested {
-//   background-color: white;
-//   list-style-type: none;
-//   padding: 0;
-//   margin: 0;
-//   position: absolute;
-//   bottom: 55px;
-//   left: -40px;
-//   opacity: 0;
-//   z-index: -100;
-//   visibility: hidden;
-//   transform: translateY(-2em);
-//   transition: all 1s;
-
-//   li {
-//     height: 45px;
-//     width: 140px;
-//     display: flex;
-//     justify-content: center;
-//     margin: 0;
-//     padding: 0 10px;
-//     border-top: 1px solid green;
-//     &:first-child {
-//       border-top: none;
-//     }
-//   }
-// }

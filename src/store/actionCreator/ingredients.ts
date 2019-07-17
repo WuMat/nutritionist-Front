@@ -6,6 +6,12 @@ export const add_ingredient_name = () => {
   };
 };
 
+export const clear_ingredient = () => {
+  return {
+    type: AdminTypes.CLEAR_FORM_RECIPE_INGREDIENT
+  };
+};
+
 export const change_ingredient_name = (
   id: string,
   val: string,

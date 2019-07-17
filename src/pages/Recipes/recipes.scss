@@ -13,6 +13,10 @@
     cursor: pointer;
   }
 }
+.activeCategory {
+  color: green;
+  font-weight: bolder;
+}
 
 @media (min-width: 665px) {
   .Recipes {

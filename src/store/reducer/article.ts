@@ -57,6 +57,8 @@ const reducer = (
   }
 ): ArticleState => {
   switch (action.type) {
+    case AdminTypes.CLEAR_FORM_LIFESTYLE:
+      return initialState;
     case AdminTypes.ADD_ARTICLE_HEADER:
       return {
         ...state,

@@ -11,9 +11,8 @@ const Blog = (): JSX.Element => {
   const [page, setPage] = useState(1);
   const fetchData = async () => {
     try {
-      const data = await axios.post("/api/lifestyle/getAll");
-      console.log(data);
-      setData(data.data.lifestyles);
+      const data = await axios.post("/api/lifestyle/getAll", { page });
+      setData(data.data);
     } catch (error) {
       console.warn(error);
     }
@@ -21,17 +20,17 @@ const Blog = (): JSX.Element => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [page]);
 
   const handleClickPage = (val: number) => {
-    console.log(val);
+    setPage(val);
   };
 
   return (
     <div className="blog">
-      {console.log(data)}
-      {_.isArray(data) &&
-        data.map((el: any) => (
+      {data &&
+        _.isArray(data.lifestyles) &&
+        data.lifestyles.map((el: any) => (
           <LifestyleCardHome
             key={el._id}
             description_short={el.description_short}
@@ -40,8 +39,14 @@ const Blog = (): JSX.Element => {
             id={el._id}
           />
         ))}
-      {_.isArray(data) && (
-        <Pagination total={40} page={page} onChange={handleClickPage} />
+      {data && (
+        <div className="blog__pagination">
+          <Pagination
+            total={data.count}
+            page={page}
+            onChange={handleClickPage}
+          />
+        </div>
       )}
     </div>
   );

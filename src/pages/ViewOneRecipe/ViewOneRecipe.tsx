@@ -70,11 +70,9 @@ const ViewOneRecipe = ({ ...props }: CardHomeProps) => {
       {payload && !_.isEmpty(payload) && (
         <>
           <div className="topWrapper">
-            <img
-              className="topWrapper__img"
-              src={`${URL}${payload.main_img}`}
-              alt=""
-            />
+            <div className="topWrapper__img">
+              <img src={`${URL}${payload.main_img}`} alt="" />
+            </div>
             <p className="topWrapper__title">{payload.title}</p>
             <div className="topWrapper__Details">
               <div className="rating">

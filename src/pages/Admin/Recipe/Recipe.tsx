@@ -34,6 +34,10 @@ interface RecipeProps extends ImageProps {
   add_ingredient: (id: string) => void;
   remove_ingredient: (id: string) => void;
   image_save: (name: string, src: any, file: any, id: string) => void;
+  clear_details: () => void;
+  clear_images: () => void;
+  clear_ingredient: () => void;
+  clear_prepare: () => void;
 }
 
 const Recipe = ({ ...props }: RecipeProps) => {
@@ -124,6 +128,10 @@ const Recipe = ({ ...props }: RecipeProps) => {
     try {
       const send = await axios.post("/api/recipe/create", formData);
       console.log(send);
+      props.clear_details();
+      props.clear_images();
+      props.clear_ingredient();
+      props.clear_prepare();
     } catch (error) {
       console.log("Jebany bład");
     }
@@ -383,7 +391,11 @@ const mapDispatchToProps = (dispatch: Dispatch) => {
     remove_ingredient: (id: string) =>
       dispatch(ActionCreators.remove_ingredient(id)),
     image_save: (name: string, src: any, file: any, id: string) =>
-      dispatch(ActionCreators.image_save(name, src, file, id))
+      dispatch(ActionCreators.image_save(name, src, file, id)),
+    clear_details: () => dispatch(ActionCreators.clear_detail()),
+    clear_images: () => dispatch(ActionCreators.clear_images()),
+    clear_ingredient: () => dispatch(ActionCreators.clear_ingredient()),
+    clear_prepare: () => dispatch(ActionCreators.clear_prepare())
   };
 };
 

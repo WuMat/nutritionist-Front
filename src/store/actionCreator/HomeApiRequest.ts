@@ -13,16 +13,11 @@ export const fetch_all_data = () => {
   return async (dispatch: Dispatch) => {
     try {
       const response = await axios.post("/api/mix/getHomView");
-      const lifestyle = response.data.lifestyle.map((el: any) => ({
-        type: 1,
-        ...el
-      }));
-      const recipe = response.data.recipe.map((el: any) => ({
-        type: 2,
-        ...el
-      }));
+      const lifestyle = response.data.lifestyle;
+      const recipe = response.data.recipe;
       const mix = [...lifestyle, ...recipe];
-      dispatch(fetch_home(mix));
+      const sortMix = _.orderBy(mix, ["create"], ["desc"]);
+      dispatch(fetch_home(sortMix));
     } catch (error) {
       console.log(error);
     }

@@ -31,6 +31,7 @@ const Pagination = memo(({ total, page, onChange }: IProps) => {
           />
         )}
         {Math.ceil(total / 4) < 6 &&
+          total > 4 &&
           renderPage().map((el: number) => (
             <div
               key={el}
@@ -38,7 +39,7 @@ const Pagination = memo(({ total, page, onChange }: IProps) => {
               onClick={() => handleClickPage(el)}
             >
               {el === page ? (
-                <p className="pagination_numberActual">{el}</p>
+                <div className="pagination_numberActual">{el}</div>
               ) : (
                 el
               )}

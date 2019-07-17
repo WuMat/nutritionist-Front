@@ -25,6 +25,8 @@ const reducer = (
   action: { type: string; id: string; val: string; child: any }
 ): RecipesState => {
   switch (action.type) {
+    case AdminTypes.CLEAR_FORM_RECIPE_INGREDIENT:
+      return initialState;
     case AdminTypes.ADD_INGREDIENT_NAME:
       return {
         ...state,

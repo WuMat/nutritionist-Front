@@ -20,10 +20,14 @@ const Navigation = ({ ham, ...props }: NavigationProps) => {
       <nav className="nav">
         <ul className="nav__element">
           <li>
-            <NavLink to="/home">Strona Główna</NavLink>
+            <NavLink to="/home" activeClassName="activeLink">
+              Strona Główna
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/recipes">Przepisy</NavLink>
+            <NavLink to="/recipes" activeClassName="activeLink">
+              Przepisy
+            </NavLink>
             <ul className="nav__nested">
               <li>
                 <NavLink
@@ -75,13 +79,19 @@ const Navigation = ({ ham, ...props }: NavigationProps) => {
             </ul>
           </li>
           <li>
-            <NavLink to="/lifestyle">blog</NavLink>
+            <NavLink to="/lifestyle" activeClassName="activeLink">
+              blog
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about">O nas</NavLink>
+            <NavLink to="/about" activeClassName="activeLink">
+              O nas
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/contact">Kontakt</NavLink>
+            <NavLink to="/contact" activeClassName="activeLink">
+              Kontakt
+            </NavLink>
           </li>
         </ul>
       </nav>

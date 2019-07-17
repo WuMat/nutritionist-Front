@@ -16,6 +16,7 @@ import article from "./store/reducer/article";
 import img from "./store/reducer/imageRecipe";
 import homeApi from "./store/reducer/HomeApiRequest";
 import { fetch_all_data } from "./store/actionCreator/HomeApiRequest";
+import auth from "./store/reducer/auth";
 declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;
@@ -28,7 +29,8 @@ const rootReducer = combineReducers({
   ui: ui,
   article: article,
   img: img,
-  homeApi: homeApi
+  homeApi: homeApi,
+  auth: auth
 });
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

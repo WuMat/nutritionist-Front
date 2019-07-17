@@ -2,8 +2,6 @@ import React from "react";
 import "./viewArticle.scss";
 import _ from "lodash";
 
-import { data } from "./data";
-
 interface IProps {
   data: any;
 }
@@ -17,7 +15,7 @@ const ViewArticle = ({ data }: IProps) => {
           <img className="article__img" src={data.mainImg.src} alt="" />
           <div className="article__info">
             <span />
-            <p>{data.date}</p>
+            <p className="sdfsdfsdfsdf">{data.date}</p>
             <span />
           </div>
           {_.isArray(data.paragraf) &&
@@ -30,7 +28,7 @@ const ViewArticle = ({ data }: IProps) => {
           {_.isArray(data.epik) &&
             data.epik.map((el: any, i: number) => (
               <div key={i}>
-                <p>&nbsp;</p>
+                <p className="sdfsdfsdfsdf">&nbsp;</p>
                 <p className="epik__title">{el.title}</p>
 
                 {el.paragraf.map((el: any, i: any) => (

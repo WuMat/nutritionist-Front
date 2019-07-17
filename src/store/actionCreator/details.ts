@@ -7,3 +7,9 @@ export const change_input = (name: string, val: string) => {
     val: val
   };
 };
+
+export const clear_detail = () => {
+  return {
+    type: AdminTypes.CLEAR_FORM_RECIPE_DETAIL
+  };
+};

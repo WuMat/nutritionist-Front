@@ -20,3 +20,9 @@ export const change_prepare = (id: string, val: string) => {
     val: val
   };
 };
+
+export const clear_prepare = () => {
+  return {
+    type: AdminTypes.CLEAR_FORM_RECIPE_PREPARE
+  };
+};

@@ -1,5 +1,10 @@
 import { AdminTypes } from "../action/action";
-import { number } from "prop-types";
+
+export const clear_article = () => {
+  return {
+    type: AdminTypes.CLEAR_FORM_LIFESTYLE
+  };
+};
 
 export const add_article_header = (name: string, val: any) => {
   return {

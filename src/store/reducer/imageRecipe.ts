@@ -21,6 +21,8 @@ const reducer = (
   action: { type: string; name: string; src: any; file: any; id: string }
 ): ImageProps => {
   switch (action.type) {
+    case AdminTypes.CLEAR_FORM_RECIPE_IMAGES:
+      return initialState;
     case AdminTypes.RECIPE_IMAGE_ADD:
       return {
         ...state,

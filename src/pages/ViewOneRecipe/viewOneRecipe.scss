@@ -1,5 +1,5 @@
 .topWrapper {
-  height: 350px;
+  // height: 350px;
   width: 100%;
   margin: auto;
   display: flex;
@@ -9,9 +9,15 @@
 .topWrapper__img {
   height: 230px;
   width: 80%;
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 100%;
+  }
 }
 .topWrapper__title {
-  margin: 0px auto 10px auto;
+  margin: 10px auto 10px auto;
   display: flex;
   align-items: center;
   font-size: 22px;
@@ -62,6 +68,8 @@
 .bottomWrapper__ingredients {
   width: 220px;
   margin-bottom: 10px;
+  padding-right: 10px;
+  width: 100%;
 }
 .ingredients__wrapp {
   font-family: "Montserrat";
@@ -182,6 +190,16 @@
     }
   }
 }
+@media (min-width: 500px) {
+  .topWrapper__title {
+    font-size: 30px;
+  }
+}
+@media (min-width: 715px) {
+  .topWrapper__title {
+    font-size: 35px;
+  }
+}
 
 @media (min-width: 915px) {
   .topWrapper {
@@ -204,7 +222,9 @@
   .bottomWrapper {
     flex-wrap: nowrap;
   }
-
+  .bottomWrapper__ingredients {
+    width: auto;
+  }
   .bottomWrapper__recipe {
     border-left: 1px solid #969696;
     padding-left: 30px;

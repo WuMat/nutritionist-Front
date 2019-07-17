@@ -9,10 +9,6 @@ interface RatingProps {
   id: any;
 }
 
-interface StateRating {
-  data: boolean[];
-}
-
 const quntityStars = (val: number, quantity: number) => {
   const allArr = [];
   const fillStars = Math.round(val);
@@ -29,10 +25,13 @@ const quntityStars = (val: number, quantity: number) => {
 };
 
 const Rating = ({ val, quantity, id }: RatingProps) => {
-  const [stars, setStars] = useState<StateRating>({
-    data: quntityStars(val, quantity)
-  });
-  const [starsClick, setStarsClick] = useState(val);
+  const [stars, setStars] = useState();
+  const [starsClick, setStarsClick] = useState(0);
+
+  React.useEffect(() => {
+    setStars({ data: quntityStars(val, quantity) });
+    setStarsClick(val);
+  }, [val, quantity]);
 
   const mouseEnter = (i: number) => {
     setStars({ data: quntityStars(i + 1, quantity) });
@@ -55,29 +54,29 @@ const Rating = ({ val, quantity, id }: RatingProps) => {
       console.log(error);
     }
   };
-
   return (
     <>
       <div className="rating">
-        {stars.data.map((val, i) =>
-          val ? (
-            <i
-              key={i}
-              className="far fa-star"
-              onMouseEnter={() => mouseEnter(i)}
-              onMouseLeave={mouseLeave}
-              onClick={() => handleClick(i)}
-            />
-          ) : (
-            <i
-              key={i}
-              className="fas fa-star"
-              onMouseEnter={() => mouseEnter(i)}
-              onMouseLeave={mouseLeave}
-              onClick={() => handleClick(i)}
-            />
-          )
-        )}
+        {stars &&
+          stars.data.map((val: any, i: number) =>
+            val ? (
+              <i
+                key={i}
+                className="far fa-star"
+                onMouseEnter={() => mouseEnter(i)}
+                onMouseLeave={mouseLeave}
+                onClick={() => handleClick(i)}
+              />
+            ) : (
+              <i
+                key={i}
+                className="fas fa-star"
+                onMouseEnter={() => mouseEnter(i)}
+                onMouseLeave={mouseLeave}
+                onClick={() => handleClick(i)}
+              />
+            )
+          )}
       </div>
     </>
   );
