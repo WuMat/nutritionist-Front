@@ -1,1 +1,1 @@
-export const URL = "http://116.203.197.143/api/uploads/";
+export const URL = "http://116.203.197.143/img";
