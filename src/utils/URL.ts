@@ -1,1 +1,1 @@
-export const URL = "http://localhost:8080/uploads/";
+export const URL = "http://116.203.197.143/uploads/";
