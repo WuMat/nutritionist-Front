@@ -80,7 +80,7 @@ const Navigation = ({ ham, ...props }: NavigationProps) => {
           </li>
           <li>
             <NavLink to="/lifestyle" activeClassName="activeLink">
-              blog
+              Blog
             </NavLink>
           </li>
           <li>

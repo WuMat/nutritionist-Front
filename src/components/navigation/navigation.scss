@@ -130,7 +130,7 @@
   .nav__element li:hover > .nav__nested {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0%);
+    transform: translateY(121%);
   }
   .nav__nested {
     background-color: white;
@@ -139,11 +139,11 @@
     margin: 0;
     position: absolute;
     bottom: 45px;
-    left: -40px;
+    left: -26px;
     opacity: 0;
     z-index: -100;
     visibility: hidden;
-    transform: translateY(-2em);
+    transform: translateY(150%);
     transition: all 1s;
 
     li {
@@ -226,6 +226,9 @@
       }
     }
   }
+  .nav__element li:hover > .nav__nested {
+    transform: translateY(120%);
+  }
   .nav__nested {
     bottom: 55px;
     left: -30px;
@@ -250,6 +253,9 @@
 @media (min-width: 1060px) {
   .navWrapper {
     top: 339px;
+  }
+  .nav__element li:hover > .nav__nested {
+    transform: translateY(117%);
   }
   .nav__nested {
     bottom: 55px;

@@ -48,6 +48,18 @@ const Layout = ({ children }: LayoutProps) => {
           {/* <div className="info__title">O mnie</div> */}
           <div className="info__fot">
             <img src={logo} alt="Logo" />
+            <br />
+            <br />
+            <br />
+
+            <div className="layout__description">
+              Cześć! Fajnie, że jesteś! To miejsce stworzone właśnie dla Ciebie!
+              Wpadaj do nas kiedy masz ochotę, będziemy dzielić się z Tobą naszą
+              pasją, nowinkami ze świata dietetyki, przepisami ale przede
+              wszystkim wiedzą opartą na nauce (EBN - od ang. evidence-based
+              nutrition)! Najlepiej zasiądź wygodnie w fotelu, zaparz swoją
+              ulubioną kawę lub herbatę i spędź z nami odrobinę czasu!
+            </div>
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import React from "react";
+import axios from "../../axios";
 import "./contact.scss";
+
 interface IProps {
   name: string;
   title: string;
@@ -16,7 +18,12 @@ const Contact = () => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
-  const handleClick = () => {
+  const handleClick = async () => {
+    try {
+      const response = await axios.post("/api/mail/send", form);
+    } catch (error) {
+      console.log(error);
+    }
     console.log("object");
     setForm(initState);
   };

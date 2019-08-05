@@ -1,14 +1,13 @@
 .topWrapper {
-  // height: 350px;
   width: 100%;
   margin: auto;
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 .topWrapper__img {
-  height: 230px;
+  height: 100%;
   width: 80%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
 
@@ -18,13 +17,13 @@
 }
 .topWrapper__title {
   margin: 10px auto 10px auto;
-  display: flex;
-  align-items: center;
   font-size: 22px;
   font-weight: 600;
+  text-align: center;
   font-family: "pt_serifbold";
 }
 .topWrapper__Details {
+  margin: 0 auto;
   width: 80%;
   display: flex;
   flex-wrap: wrap;
@@ -202,19 +201,12 @@
 }
 
 @media (min-width: 915px) {
-  .topWrapper {
-    width: 700px;
-  }
-  .topWrapper__img {
-    height: 250px;
-    width: 700px;
-  }
   .topWrapper__title {
     margin: 15px auto;
     font-size: 45px;
   }
   .topWrapper__Details {
-    width: 100%;
+    width: 720px;
     display: flex;
     justify-content: space-between;
   }
