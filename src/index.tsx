@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+
 import "./index.scss";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
@@ -17,6 +18,7 @@ import img from "./store/reducer/imageRecipe";
 import homeApi from "./store/reducer/HomeApiRequest";
 import { fetch_all_data } from "./store/actionCreator/HomeApiRequest";
 import auth from "./store/reducer/auth";
+
 declare global {
   interface Window {
     __REDUX_DEVTOOLS_EXTENSION_COMPOSE__: any;

@@ -14,6 +14,7 @@ import Admin from "./pages/Admin/Admin";
 import About from "./pages/About/About";
 import ViewOneRecipe from "./pages/ViewOneRecipe/ViewOneRecipe";
 import ViewArticle from "./pages/ViewArticle/ViewArticle";
+
 interface IProps {
   mobile: () => void;
   desktop: () => void;
