@@ -5,6 +5,8 @@ import axios from "../../axios";
 import Pagination from "../../components/Pagination/Pagination";
 import RecipeCardHome from "../../components/CardHome/CardHome";
 import LifestyleCardHome from "../../components/LifestyleCardHome/LifestyleCardHome";
+
+import opneSocket from "socket.io-client";
 import "./home.scss";
 
 interface IProps {
@@ -21,6 +23,10 @@ const Home = ({ payload }: IProps) => {
       setSlicePayload(payload.slice(page * 4 - 4, page * 4));
     }
   }, [page, payload]);
+
+  React.useEffect(() => {
+    opneSocket("http://localhost:8080");
+  }, []);
 
   const handleClickPage = (val: number) => {
     setPage(val);
